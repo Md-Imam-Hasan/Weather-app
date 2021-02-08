@@ -15,12 +15,14 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+// fetch api
 const searchWeather = async cityName => {
   const searchResult = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`);
   const data = await searchResult.json();
   displayWeather(data);
 }
 
+// displaying data 
 const displayWeather = data => {
   const weatherStatus = document.querySelector(".weather-status");
   weatherStatus.innerHTML = `
